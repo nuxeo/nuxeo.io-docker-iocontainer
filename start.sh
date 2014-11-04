@@ -46,6 +46,13 @@ if [ ! -z "$CONNECT_URL" ]; then
   echo "org.nuxeo.connect.url=$CONNECT_URL" >> $NUXEO_CONF
 fi
 
+# elasticsearch index
+if [ ! -z "$ES_HOSTS" ]; then
+  echo Adding $ES_HOSTS
+  echo "elasticsearch.addressList=$ES_HOSTS" >> $NUXEO_CONF
+  echo "elasticsearch.clusterName=nuxeo" >> $NUXEO_CONF
+  echo "elasticsearch.indexName=$ENV_TECH_ID" >> $NUXEO_CONF
+fi
 
 echo "org.nuxeo.dev=true" >> $NUXEO_CONF
 
