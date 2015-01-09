@@ -61,7 +61,7 @@ printf "%b\n" "$CLID" >> /var/lib/nuxeo/data/instance.clid
 
 # Install packages if exist
 if [ ! -z "$PACKAGES" ]; then
-  su $NUXEO_USER -m -c "$NUXEOCTL mp-install $PACKAGES -s --accept=true"
+  su $NUXEO_USER -m -c "$NUXEOCTL mp-install $PACKAGES -s --relax=false --accept=true"
 fi
 
 # Start nuxeo
