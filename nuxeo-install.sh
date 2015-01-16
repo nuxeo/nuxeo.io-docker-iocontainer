@@ -2,7 +2,7 @@
 
 # Nuxeo setup
 
-wget -q "http://www.nuxeo.org/static/latest-io-snapshot/nuxeo,io,tomcat,zip,7.1" -O /tmp/nuxeo-distribution-tomcat.zip
+wget -q "http://www.nuxeo.org/static/latest-io-snapshot/nuxeo,io,tomcat,zip,7.2" -O /tmp/nuxeo-distribution-tomcat.zip
 
 mkdir -p /tmp/nuxeo-distribution
 unzip -q -d /tmp/nuxeo-distribution /tmp/nuxeo-distribution-tomcat.zip
