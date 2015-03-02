@@ -66,6 +66,9 @@ if [ ! -z "$PACKAGES" ]; then
   su $NUXEO_USER -m -c "$NUXEOCTL mp-install $PACKAGES -s --relax=false --accept=true"
 fi
 
+# Force Fix installation
+su $NUXEO_USER -m -m "$NUXEOCTL mp-install nuxeo-7.1-SU01 -s --relax=false --accept=true"
+
 # Start nuxeo
 su $NUXEO_USER -m -c "$NUXEOCTL --quiet start"
 su $NUXEO_USER -m -c "tail -f /var/log/nuxeo/server.log"
