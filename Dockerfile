@@ -1,10 +1,9 @@
-# Nuxeo IO Base image is a ubuntu precise image with all the dependencies needed by Nuxeo Platform
+# Nuxeo IO Container image is a nuxeo-base image which install expected java and Nuxeo distribution tomcat
 #
 # VERSION               0.0.1
 
 FROM       quay.io/nuxeoio/nuxeo-base
 MAINTAINER Nuxeo <contact@nuxeo.com>
-
 
 # Copy scripts
 ADD nuxeo-install.sh /root/nuxeo-install.sh
