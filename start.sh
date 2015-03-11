@@ -57,6 +57,7 @@ if [ ! -z "$ES_HOSTS" ]; then
 fi
 
 echo "org.nuxeo.dev=true" >> $NUXEO_CONF
+echo "org.nuxeo.automation.trace=true" >> $NUXEO_CONF
 
 # instance.clid
 printf "%b\n" "$CLID" >> /var/lib/nuxeo/data/instance.clid
