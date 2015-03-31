@@ -9,6 +9,7 @@ MAINTAINER Nuxeo <contact@nuxeo.com>
 # Copy scripts
 ADD nuxeo-install.sh /root/nuxeo-install.sh
 ADD start.sh /root/start.sh
+ADD io /root/io
 
 # Download & Install Nuxeo
 RUN /bin/bash /root/nuxeo-install.sh
