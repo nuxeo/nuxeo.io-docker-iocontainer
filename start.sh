@@ -52,8 +52,12 @@ if [ ! -z "$ES_HOSTS" ]; then
   echo "elasticsearch.addressList=$ES_HOSTS" >> $NUXEO_CONF
   echo "elasticsearch.clusterName=nuxeo" >> $NUXEO_CONF
   echo "elasticsearch.indexName=$ENV_TECH_ID" >> $NUXEO_CONF
+  echo "elasticsearch.indexNumberOfShards=1" >> $NUXEO_CONF
+  echo "elasticsearch.indexNumberOfReplicas=2" >> $NUXEO_CONF
 fi
 
+echo "org.nuxeo.automation.trace=true" >> $NUXEO_CONF
+echo "org.nuxeo.dev=true" >> $NUXEO_CONF
 echo "org.nuxeo.io.environment.techid=${ENV_TECH_ID}" >> $NUXEO_CONF
 
 # instance.clid

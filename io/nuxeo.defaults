@@ -1,9 +1,0 @@
-nuxeo.template.includes=default
-
-# Enable some dev modee
-org.nuxeo.automation.trace=true
-org.nuxeo.dev=true
-
-# Change ElasticSearch shards config
-elasticsearch.indexNumberOfShards=1
-elasticsearch.indexNumberOfReplicas=2

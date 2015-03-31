@@ -22,7 +22,8 @@ mkdir -p /var/lib/nuxeo/data
 mkdir -p /var/log/nuxeo
 mkdir -p /var/run/nuxeo
 
-mv /root/io ${NUXEO_HOME}/templates/
+# Override some default template files
+mv /root/io/* ${NUXEO_HOME}/templates/default/
 
 chown -R $NUXEO_USER:$NUXEO_USER ${NUXEO_HOME}
 chown -R $NUXEO_USER:$NUXEO_USER /var/log/nuxeo
