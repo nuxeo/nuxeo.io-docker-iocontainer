@@ -64,6 +64,7 @@ echo "org.nuxeo.io.environment.techid=${ENV_TECH_ID}" >> $NUXEO_CONF
 printf "%b\n" "$CLID" >> /var/lib/nuxeo/data/instance.clid
 
 # Install packages if exist
+$NUXEOCTL mp-update &> /dev/null
 if [ ! -z "$PACKAGES" ]; then
   su $NUXEO_USER -m -c "$NUXEOCTL mp-install $PACKAGES -s --relax=false --accept=true"
 fi
