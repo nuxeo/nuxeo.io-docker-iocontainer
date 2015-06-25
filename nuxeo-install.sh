@@ -25,7 +25,7 @@ mkdir -p /var/run/nuxeo
 # Override some default template files
 cp -Rf /root/io/* ${NUXEO_HOME}/templates/default/ && rm -rf /root/io
 
-chown -R $NUXEO_USER:$NUXEO_USER ${NUXEO_HOME}
+chown -R $NUXEO_USER:$NUXEO_USER /var/lib/nuxeo
 chown -R $NUXEO_USER:$NUXEO_USER /var/log/nuxeo
 chown -R $NUXEO_USER:$NUXEO_USER /var/run/nuxeo
 
