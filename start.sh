@@ -60,6 +60,10 @@ echo "org.nuxeo.automation.trace=true" >> $NUXEO_CONF
 echo "org.nuxeo.dev=true" >> $NUXEO_CONF
 echo "org.nuxeo.io.environment.techid=${ENV_TECH_ID}" >> $NUXEO_CONF
 
+# Keep audit logs in Prostgres instead of ES
+echo "audit.elasticsearch.enabled=false" >> $NUXEO_CONF
+echo "audit.elasticsearch.migration=false" >> $NUXEO_CONF
+
 # instance.clid
 printf "%b\n" "$CLID" >> /var/lib/nuxeo/data/instance.clid
 
