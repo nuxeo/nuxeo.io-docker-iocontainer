@@ -8,7 +8,7 @@ echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selec
 apt-get install -y oracle-java8-installer
 
 # Nuxeo setup
-wget -q "http://www.nuxeo.org/static/latest-io-snapshot/nuxeo,io,tomcat,zip,7.4" -O /tmp/nuxeo-distribution-tomcat.zip
+wget -q "http://www.nuxeo.org/static/latest-io-snapshot/nuxeo,io,tomcat,zip,7.10" -O /tmp/nuxeo-distribution-tomcat.zip
 
 mkdir -p /tmp/nuxeo-distribution
 unzip -q -d /tmp/nuxeo-distribution /tmp/nuxeo-distribution-tomcat.zip
