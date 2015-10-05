@@ -5,7 +5,12 @@ apt-get remove -y --purge openjdk-7-jdk
 add-apt-repository -y ppa:webupd8team/java && apt-get update
 echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
 echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections
-apt-get install -y oracle-java8-installer
+
+# Do no use apt, since we don't want to install java8_u60 cause : https://github.com/aws/aws-sdk-java/issues/444
+wget http://ppa.launchpad.net/webupd8team/java/ubuntu/pool/main/o/oracle-java8-installer/oracle-java8-installer_8u45+8u33arm-1~webupd8~1_all.deb
+dpkg -i oracle-java8-installer_8u45+8u33arm-1~webupd8~1_all.deb
+
+#apt-get install -y oracle-java8-installer
 
 # Nuxeo setup
 wget -q "http://www.nuxeo.org/static/latest-io-release/nuxeo,io,tomcat,zip,7.4" -O /tmp/nuxeo-distribution-tomcat.zip
