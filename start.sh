@@ -32,7 +32,7 @@ echo "nuxeo.core.binarymanager=org.nuxeo.ecm.core.storage.sql.S3BinaryManager" >
 echo "nuxeo.s3storage.bucket=$S3_BUCKET" >> $NUXEO_CONF
 echo "nuxeo.s3storage.awsid=$S3_AWSID" >> $NUXEO_CONF
 echo "nuxeo.s3storage.awssecret=$S3_AWSSECRET" >> $NUXEO_CONF
-echo "nuxeo.s3storage.bucket.prefix=$S3_PREFIX" >> $NUXEO_CONF
+echo "nuxeo.s3storage.bucket_prefix=$S3_PREFIX" >> $NUXEO_CONF
 if [ $S3_AWSID = "nuxeo" ] ; then
   echo "nuxeo.s3storage.endpoint=http://$S3_PORT_1337_TCP_ADDR:$S3_PORT_1337_TCP_PORT" >> $NUXEO_CONF
 fi
@@ -66,6 +66,8 @@ echo "audit.elasticsearch.migration=false" >> $NUXEO_CONF
 
 # instance.clid
 printf "%b\n" "$CLID" >> /var/lib/nuxeo/data/instance.clid
+
+su $NUXEO_USER -m -c "$NUXEOCTL mp-hotfix --accept=true"
 
 # Install packages if exist
 if [ ! -z "$PACKAGES" ]; then
