@@ -1,4 +1,5 @@
 #!/bin/sh -x
+set -e
 
 # Install java
 apt-get remove -y --purge openjdk-7-jdk
