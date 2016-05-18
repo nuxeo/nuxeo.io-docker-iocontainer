@@ -1,5 +1,5 @@
 #!/bin/sh -x
-
+set -e
 # Install java
 apt-get remove -y --purge openjdk-7-jdk
 add-apt-repository -y ppa:webupd8team/java && apt-get update
